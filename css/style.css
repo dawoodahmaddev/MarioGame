@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 25px solid #1f580e;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#e8a5ee, #6c9acf);
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    animation: pipe-animation 5s infinite linear;
+}
+
+.princess {
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 700ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.coin {
+    width: 40px; 
+    height: 40px; 
+    position: absolute; 
+    background-size: cover;
+    top: 75%;
+}
+
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e20d91; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    z-index: 1;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -60px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-board {
+        height: 100vh;
+        border-bottom: 50px solid #1f580e;
+        object-fit: cover; 
+        display: flex;
+    }
+}
+    
+
+
+
+
